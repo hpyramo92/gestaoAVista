@@ -1,28 +1,25 @@
-import {Request, Response} from "express";
+import { Request, Response } from "express";
 import knex from "../database/connection";
 
 class UsuarioController {
-	async create(request: Request, response: Response) {
-		const {
-			nome,
-			timeId
-		} = request.body;
-	
-		await knex("Usuario").insert({
-			nome,
-			timeId
-		});
-	
-		return response.json({ success: true })
-	}
+    async create(request: Request, response: Response) {
+        const { nome, timeId } = request.body;
 
-	// index
+        await knex("Usuario").insert({
+            nome,
+            timeId,
+        });
 
-	// show
+        return response.json({ success: true });
+    }
 
-	// update
+    // index
 
-	// delete
+    // show
+
+    // update
+
+    // delete
 }
 
 export default UsuarioController;
